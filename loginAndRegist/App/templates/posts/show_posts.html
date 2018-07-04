@@ -1,0 +1,51 @@
+<!-- 展示电影详细信息页面 -->
+{% extends 'common/base.html' %}
+{% block title %}
+    {{title}}
+{% endblock %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block page_content %}
+    <!-- <img src="{{ url_for('static',filename='upload/s_'+img) }}" alt=""> -->
+
+<div class="media">
+    <a class="media-left" href="#">
+        <img class="media-object" src="{{ url_for('static',filename='upload/s_'+img) }}"
+             alt="媒体对象">
+    </a>
+    <div class="media-body">
+        <h1 class="media-heading">{{title}}</h1>
+        {{content}}
+        <h5 style="color: red">演员表：</h5><h2 class="media-heading">{{cha}}</h2> <!-- 演员表-->
+        <h5 style="color: blueviolet">演员表：<h1 class="media-heading">{{dirs}}</h1> <!-- 导演表-->
+        <!-- <h1 class="media-heading">{分类}</h1> 分类 -->
+    </div>
+</div>
+<a>{{userName}}</a>
+<div class="media">
+    <a class="media-left" href="#">
+        <img class="media-object" src="{{ url_for('static',filename='upload/s_'+userIcon) }}" style="height: 80px; width: 80px;"
+             alt="{{userName}}">
+    </a>
+
+    <div class="media-body">
+        <h4 class="media-heading">电影简介</h4>
+        <h2>{{selfread}}</h2>
+        
+        <!-- <div class="media">
+            <a class="media-left" href="#">
+                <img class="media-object" src="/wp-content/uploads/2014/06/64.jpg"
+                     alt="媒体对象">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">媒体标题</h4>
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+            </div>
+        </div> -->
+    </div>
+</div>
+
+{% endblock %}
